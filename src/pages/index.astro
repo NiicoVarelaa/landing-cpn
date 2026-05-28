@@ -1,17 +1,36 @@
 ---
-
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="CPN Estudio Contable | Contadora Pública Nacional"
+  description="Servicios contables, impositivos y laborales para monotributistas, PyMEs y profesionales independientes. Primera consulta gratuita."
+>
+  <Fragment slot="header">
+    <Header />
+  </Fragment>
+
+  <section class="container mx-auto px-4 py-24 md:py-32 text-center">
+    <h1 class="text-3xl md:text-5xl font-bold text-primary mb-4">
+      Soluciones contables para <span class="text-secondary">tu negocio</span>
+    </h1>
+    <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+      Asesoramiento contable, impositivo y laboral para monotributistas,
+      PyMEs y profesionales independientes.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors focus-visible:ring-2 focus-visible:ring-secondary">
+        Consulta Gratuita
+      </a>
+      <a href="#servicios" class="inline-flex items-center justify-center px-6 py-3 border border-border text-foreground rounded-md font-medium hover:bg-accent transition-colors focus-visible:ring-2 focus-visible:ring-secondary">
+        Ver Servicios
+      </a>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>
