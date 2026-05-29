@@ -5,9 +5,31 @@ interface Props {
   title: string;
   description: string;
   canonicalUrl?: string;
+  image?: string;
 }
 
-const { title, description, canonicalUrl } = Astro.props;
+const { title, description, canonicalUrl, image } = Astro.props;
+const siteUrl = 'https://cpnestudio.com';
+const ogImage = image || `${siteUrl}/og-image.jpg`;
+const canonical = canonicalUrl || siteUrl;
+
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'CPN Estudio Contable',
+  description: description,
+  url: siteUrl,
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'AR',
+    addressLocality: 'Buenos Aires',
+  },
+  telephone: '+541112345678',
+  email: 'contacto@cpnestudio.com',
+  priceRange: '$$',
+  openingHours: 'Mo-Fr 09:00-18:00',
+  sameAs: [],
+};
 ---
 
 <!doctype html>
@@ -17,9 +39,29 @@ const { title, description, canonicalUrl } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a365d" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <link rel="canonical" href={canonical} />
+
     <title>{title}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="CPN Estudio Contable" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="CPN Estudio Contable - Servicios contables profesionales" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="CPN Estudio Contable - Servicios contables profesionales" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
   </head>
   <body>
     <a
