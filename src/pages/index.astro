@@ -2,6 +2,10 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/layout/Header.astro';
 import Footer from '@/components/layout/Footer.astro';
+import Services from '@/components/sections/Services.astro';
+import About from '@/components/sections/About.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import Contact from '@/components/sections/Contact.astro';
 ---
 
 <BaseLayout
@@ -12,23 +16,36 @@ import Footer from '@/components/layout/Footer.astro';
     <Header />
   </Fragment>
 
-  <section class="container mx-auto px-4 py-24 md:py-32 text-center">
-    <h1 class="text-3xl md:text-5xl font-bold text-primary mb-4">
-      Soluciones contables para <span class="text-secondary">tu negocio</span>
-    </h1>
-    <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-      Asesoramiento contable, impositivo y laboral para monotributistas,
-      PyMEs y profesionales independientes.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors focus-visible:ring-2 focus-visible:ring-secondary">
-        Consulta Gratuita
-      </a>
-      <a href="#servicios" class="inline-flex items-center justify-center px-6 py-3 border border-border text-foreground rounded-md font-medium hover:bg-accent transition-colors focus-visible:ring-2 focus-visible:ring-secondary">
-        Ver Servicios
-      </a>
+  <section class="py-16 md:py-24 bg-accent/50" aria-labelledby="hero-heading">
+    <div class="container mx-auto px-4 text-center">
+      <h1 id="hero-heading" class="text-3xl md:text-5xl font-bold text-primary mb-4">
+        Soluciones contables para <span class="text-secondary">tu negocio</span>
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+        Asesoramiento contable, impositivo y laboral para monotributistas,
+        PyMEs y profesionales independientes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="#contacto"
+          class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+        >
+          Consulta Gratuita
+        </a>
+        <a
+          href="#servicios"
+          class="inline-flex items-center justify-center px-6 py-3 border border-border text-foreground rounded-md font-medium hover:bg-accent transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+        >
+          Ver Servicios
+        </a>
+      </div>
     </div>
   </section>
+
+  <Services />
+  <About />
+  <Testimonials />
+  <Contact />
 
   <Fragment slot="footer">
     <Footer />
