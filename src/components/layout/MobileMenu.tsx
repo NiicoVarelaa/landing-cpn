@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Button } from '@/components/ui/button';
 
 const navLinks = [
   { href: '#servicios', label: 'Servicios' },
@@ -50,13 +49,6 @@ export default function MobileMenu() {
               {link.label}
             </a>
           ))}
-          <div className="mt-4 px-4">
-            <Button asChild className="w-full">
-              <a href="https://wa.me/541112345678?text=Hola%2C%20quiero%20agendar%20una%20consulta%20contable" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
-                Agendar Consulta
-              </a>
-            </Button>
-          </div>
         </nav>
       </SheetContent>
     </Sheet>

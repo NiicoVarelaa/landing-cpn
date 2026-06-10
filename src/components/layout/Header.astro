@@ -1,5 +1,4 @@
 ---
-import { Button } from '@/components/ui/button';
 import MobileMenu from '@/components/layout/MobileMenu';
 ---
 
@@ -16,9 +15,6 @@ import MobileMenu from '@/components/layout/MobileMenu';
       <li><a href="#contacto" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-secondary">Contacto</a></li>
     </ul>
 
-    <Button as="a" href="https://wa.me/541112345678?text=Hola%2C%20quiero%20agendar%20una%20consulta%20contable" target="_blank" rel="noopener noreferrer" size="sm" class="hidden md:inline-flex">
-      Agendar Consulta
-    </Button>
 
     <MobileMenu client:only="react" />
   </nav>

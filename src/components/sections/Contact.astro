@@ -17,7 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
     </div>
 
     <form id="contact-form" class="max-w-lg mx-auto space-y-6" novalidate>
-      <div>
+      <div class="flex flex-col gap-1.5">
         <Label for="name" class="text-foreground font-medium">
           Nombre completo <span class="text-destructive" aria-hidden="true">*</span>
         </Label>
@@ -28,11 +28,10 @@ import { Textarea } from '@/components/ui/textarea';
           required
           autocomplete="name"
           placeholder="Ej: María García"
-          class="mt-2"
         />
       </div>
 
-      <div>
+      <div class="flex flex-col gap-1.5">
         <Label for="email" class="text-foreground font-medium">
           Email <span class="text-destructive" aria-hidden="true">*</span>
         </Label>
@@ -43,11 +42,10 @@ import { Textarea } from '@/components/ui/textarea';
           required
           autocomplete="email"
           placeholder="maria@email.com"
-          class="mt-2"
         />
       </div>
 
-      <div>
+      <div class="flex flex-col gap-1.5">
         <Label for="phone" class="text-foreground font-medium">
           Teléfono <span class="text-muted-foreground font-normal text-xs">(opcional)</span>
         </Label>
@@ -57,11 +55,10 @@ import { Textarea } from '@/components/ui/textarea';
           type="tel"
           autocomplete="tel"
           placeholder="+54 11 1234-5678"
-          class="mt-2"
         />
       </div>
 
-      <div>
+      <div class="flex flex-col gap-1.5">
         <Label for="message" class="text-foreground font-medium">
           Consulta <span class="text-destructive" aria-hidden="true">*</span>
         </Label>
@@ -71,7 +68,6 @@ import { Textarea } from '@/components/ui/textarea';
           rows={5}
           required
           placeholder="Contame brevemente qué necesitás..."
-          class="mt-2"
         />
       </div>
 
