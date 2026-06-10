@@ -16,7 +16,7 @@ import { Textarea } from '@/components/ui/textarea';
       </p>
     </div>
 
-    <form class="max-w-lg mx-auto space-y-6" method="POST" action="/api/contact" novalidate>
+    <form id="contact-form" class="max-w-lg mx-auto space-y-6" novalidate>
       <div>
         <Label for="name" class="text-foreground font-medium">
           Nombre completo <span class="text-destructive" aria-hidden="true">*</span>
@@ -81,3 +81,26 @@ import { Textarea } from '@/components/ui/textarea';
     </form>
   </div>
 </section>
+
+<script>
+  const WHATSAPP_NUMBER = '541112345678';
+
+  document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.querySelector('#name')?.value?.trim();
+    const email = form.querySelector('#email')?.value?.trim();
+    const phone = form.querySelector('#phone')?.value?.trim();
+    const message = form.querySelector('#message')?.value?.trim();
+
+    let text = `Hola, soy ${name}.\n\n${message}`;
+    if (email) text += `\n\nEmail: ${email}`;
+    if (phone) text += `\nTeléfono: ${phone}`;
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
+  });
+</script>

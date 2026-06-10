@@ -52,7 +52,7 @@ export default function MobileMenu() {
           ))}
           <div className="mt-4 px-4">
             <Button asChild className="w-full">
-              <a href="#contacto" onClick={() => setOpen(false)}>
+              <a href="https://wa.me/541112345678?text=Hola%2C%20quiero%20agendar%20una%20consulta%20contable" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
                 Agendar Consulta
               </a>
             </Button>
