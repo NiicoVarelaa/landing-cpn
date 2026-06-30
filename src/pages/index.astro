@@ -16,12 +16,17 @@ import Contact from '@/components/sections/Contact.astro';
     <Header />
   </Fragment>
 
-  <section class="py-16 md:py-24 bg-accent/50" aria-labelledby="hero-heading">
-    <div class="container mx-auto px-4 text-center">
-      <h1 id="hero-heading" class="text-3xl md:text-5xl font-bold text-primary mb-4">
+  <section class="relative bg-gradient-to-b from-primary to-primary-dark overflow-hidden" aria-labelledby="hero-heading">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M0 200C360 0 1080 400 1440 200V800H0V200Z" fill="currentColor" />
+      </svg>
+    </div>
+    <div class="container mx-auto px-4 py-20 md:py-32 text-center relative z-10">
+      <h1 id="hero-heading" class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
         Soluciones contables para <span class="text-secondary">tu negocio</span>
       </h1>
-      <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+      <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">
         Asesoramiento contable, impositivo y laboral para monotributistas,
         PyMEs y profesionales independientes.
       </p>
@@ -30,17 +35,22 @@ import Contact from '@/components/sections/Contact.astro';
           href="https://wa.me/541112345678?text=Hola%2C%20quiero%20agendar%20una%20consulta%20contable"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-secondary text-primary-dark rounded-md font-semibold hover:bg-secondary-light transition-all shadow-lg hover:shadow-xl focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
         >
           Consulta Gratuita
         </a>
         <a
           href="#servicios"
-          class="inline-flex items-center justify-center px-6 py-3 border border-border text-foreground rounded-md font-medium hover:bg-accent transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+          class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-white/30 text-white rounded-md font-medium hover:bg-white/10 transition-all focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
         >
           Ver Servicios
         </a>
       </div>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full leading-none" aria-hidden="true">
+      <svg class="w-full h-auto" viewBox="0 0 1440 80" preserveAspectRatio="none" fill="#ffffff">
+        <path d="M0 80 C360 0 1080 0 1440 80 V80 H0 V80Z" />
+      </svg>
     </div>
   </section>
 

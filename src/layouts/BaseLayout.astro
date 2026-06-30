@@ -1,5 +1,6 @@
 ---
 import '@/styles/global.css';
+import FloatingWhatsApp from '@/components/layout/FloatingWhatsApp.astro';
 
 interface Props {
   title: string;
@@ -75,5 +76,6 @@ const schemaOrg = {
       <slot />
     </main>
     <slot name="footer" />
+    <FloatingWhatsApp />
   </body>
 </html>
