@@ -7,11 +7,11 @@ const highlights = [
 ];
 ---
 
-<section id="sobre-mi" class="py-16 md:py-24" aria-labelledby="about-heading">
+<section id="sobre-mi" class="py-20 md:py-28" aria-labelledby="about-heading">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
       <div>
-        <h2 id="about-heading" class="text-2xl md:text-4xl font-bold text-primary mb-6">
+        <h2 id="about-heading" class="text-2xl md:text-4xl font-heading font-bold text-primary mb-6">
           Sobre Mí
         </h2>
         <div class="space-y-4 text-muted-foreground leading-relaxed">
@@ -39,12 +39,19 @@ const highlights = [
         </ul>
       </div>
 
-      <div class="aspect-square max-w-md mx-auto md:mx-0 bg-accent rounded-lg flex items-center justify-center">
-        <div class="text-center text-muted-foreground">
-          <svg class="w-20 h-20 mx-auto mb-4 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      <div class="aspect-square max-w-md mx-auto md:mx-0 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
+          <svg class="w-full h-full" viewBox="0 0 400 400" fill="currentColor">
+            <circle cx="200" cy="200" r="180" />
+            <circle cx="200" cy="200" r="120" />
+            <circle cx="200" cy="200" r="60" />
           </svg>
-          <p class="text-sm">Foto profesional</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 rounded-full bg-secondary/20 border-2 border-secondary/40 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-heading font-bold text-secondary">CPN</span>
+          </div>
+          <p class="text-white/60 text-sm">Contadora Pública Nacional</p>
         </div>
       </div>
     </div>
